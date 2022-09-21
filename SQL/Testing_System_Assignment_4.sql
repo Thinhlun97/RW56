@@ -1,46 +1,51 @@
 #Câu 1
-SELECT A.FullName, D.DepartmentName
+SELECT A.Email, A.FullName, D.DepartmentName
 FROM `Account` A
-JOIN Department D ON A.DepartmentID = D.DepartmentID;
+JOIN `Department` D ON A.DepartmentID = D.DepartmentID;
 
 #câu 2
 SELECT *
 FROM `Account`
-WHERE CreateDate >'2010-12-20';
+WHERE CreateDate >'2020-12-20';
 
 #Câu 3
-SELECT A.FullName, P.PositionName
+SELECT A.Email, A.FullName, P.PositionName
 FROM `Account` A
 JOIN `Position` P ON A.PositionID = P.PositionID
-WHERE PositionName = 'Dev';
+WHERE P.PositionName = 'Dev';
 
 #Câu 4
-SELECT D.DepartmentName, COUNT(A.DepartmentID)
+SELECT D.DepartmentName, COUNT(A.DepartmentID) AS SLNV
 FROM `Department` D
 JOIN `Account` A ON D.DepartmentID = A.DepartmentID
 GROUP BY A.DepartmentID
-HAVING COUNT(A.DepartmentID) >2;
+HAVING COUNT(A.DepartmentID) >=3;
 
 #Câu 5
 WITH CountQuesTable AS(
 	SELECT Q.QuestionID, Q.Content, COUNT(EQ.QuestionID) AS SL
-    FROM ExamQuestion EQ
-    JOIN Question Q ON Q.QuestionID = EQ.QuestionID
+    FROM `ExamQuestion` EQ
+    JOIN `Question` Q ON Q.QuestionID = EQ.QuestionID
     GROUP BY EQ.QuestionID)
 SELECT * FROM CountQuesTable
 WHERE SL = (SELECT MAX(SL) FROM	CountQuesTable);
 
 #Câu 6
 SELECT Q.CategoryID, CQ.CategoryName, COUNT(CQ.CategoryID) AS SLSD
-FROM CategoryQuestion CQ
-JOIN Question Q ON Q.CategoryID = CQ.CategoryID
+FROM `CategoryQuestion` CQ
+JOIN `Question` Q ON Q.CategoryID = CQ.CategoryID
 GROUP BY CQ.CategoryID;
 
 #Câu 7
-SELECT Q.content, Q.CategoryID, E.Title, COUNT(E.CategoryID) AS SLSD
-FROM Question Q
-JOIN Exam E ON Q.CategoryID = E.CategoryID
-GROUP BY Q.CategoryID;
+SELECT Q.content, Q.QuestionID, COUNT(EQ.QuestionID) AS SLSD
+FROM `ExamQuestion` EQ
+RIGHT JOIN `Question` Q ON Q.QuestionID = EQ.QuestionID
+GROUP BY Q.QuestionID;
+
+SELECT Q.content, Q.QuestionID, COUNT(EQ.QuestionID) AS SLSD
+FROM `Question` Q
+LEFT JOIN `ExamQuestion` EQ ON Q.QuestionID = EQ.QuestionID
+GROUP BY Q.QuestionID;
 
 #Câu 8
 WITH CountQuesQTable AS(
@@ -89,3 +94,22 @@ JOIN Question Q ON T.TypeID = Q.TypeID
 GROUP BY Q.TypeID;
 
 #Câu 14
+SELECT * FROM `Group` G
+LEFT JOIN `GroupAccount` GA ON G.groupID = GA.GroupID
+WHERE GA.AccountID IS NULL;
+
+
+
+#Câu 17
+SELECT A.FullName
+FROM `Account` A
+JOIN `GroupAccount` GA ON A.AccountID = GA.AccountID
+WHERE GA.GroupID = 1
+UNION
+SELECT A.FullName
+FROM `Account` A
+JOIN `GroupAccount` GA ON A.AccountID = GA.AccountID
+WHERE GA.GroupID = 3;
+
+
+
