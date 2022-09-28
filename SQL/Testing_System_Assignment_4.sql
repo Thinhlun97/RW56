@@ -1,115 +1,149 @@
-#Câu 1
-SELECT A.Email, A.FullName, D.DepartmentName
-FROM `Account` A
-JOIN `Department` D ON A.DepartmentID = D.DepartmentID;
+USE testing_system_assignment_1;
 
-#câu 2
+
+#câu 1: Viết lệnh để lấy ra danh sách nhân viên và thông tin phòng ban của họ
+SELECT A.Username, A.FullName, D.DepartmentName, D.departmentID
+FROM `Account` A
+JOIN `Department` D ON D.departmentID = A.departmentID;
+
+#câu 2: Viết lệnh để lấy ra thông tin các account được tạo sau ngày 20/12/2010
 SELECT *
-FROM `Account`
-WHERE CreateDate >'2020-12-20';
-
-#Câu 3
-SELECT A.Email, A.FullName, P.PositionName
 FROM `Account` A
-JOIN `Position` P ON A.PositionID = P.PositionID
+WHERE CreateDate > '2010-12-20';
+
+#câu 3: Viết lệnh để lấy ra tất cả các developer
+SELECT A.*, P.PositionName
+FROM `Account` A
+JOIN `Position` P ON P.PositionID = A.PositionID
 WHERE P.PositionName = 'Dev';
 
-#Câu 4
-SELECT D.DepartmentName, COUNT(A.DepartmentID) AS SLNV
+#câu 4: Viết lệnh để lấy ra danh sách các phòng ban có >3 nhân viên
+SELECT D.DepartmentName, COUNT(A.DepartmentID)
 FROM `Department` D
-JOIN `Account` A ON D.DepartmentID = A.DepartmentID
+JOIN `Account` A ON A.DepartmentID = D.DepartmentID
 GROUP BY A.DepartmentID
-HAVING COUNT(A.DepartmentID) >=3;
+HAVING COUNT(A.DepartmentID) > 2;
 
-#Câu 5
-WITH CountQuesTable AS(
-	SELECT Q.QuestionID, Q.Content, COUNT(EQ.QuestionID) AS SL
-    FROM `ExamQuestion` EQ
-    JOIN `Question` Q ON Q.QuestionID = EQ.QuestionID
-    GROUP BY EQ.QuestionID)
-SELECT * FROM CountQuesTable
-WHERE SL = (SELECT MAX(SL) FROM	CountQuesTable);
-
-#Câu 6
-SELECT Q.CategoryID, CQ.CategoryName, COUNT(CQ.CategoryID) AS SLSD
-FROM `CategoryQuestion` CQ
-JOIN `Question` Q ON Q.CategoryID = CQ.CategoryID
-GROUP BY CQ.CategoryID;
-
-#Câu 7
-SELECT Q.content, Q.QuestionID, COUNT(EQ.QuestionID) AS SLSD
-FROM `ExamQuestion` EQ
-RIGHT JOIN `Question` Q ON Q.QuestionID = EQ.QuestionID
-GROUP BY Q.QuestionID;
-
-SELECT Q.content, Q.QuestionID, COUNT(EQ.QuestionID) AS SLSD
+#câu 5: Viết lệnh để lấy ra danh sách câu hỏi được sử dụng trong đề thi nhiều nhất
+WITH CTE_SLSD AS
+(SELECT Q.Content, Q.QuestionID, EQ.ExamID, COUNT(EQ.QuestionID) AS SL
 FROM `Question` Q
-LEFT JOIN `ExamQuestion` EQ ON Q.QuestionID = EQ.QuestionID
+JOIN `ExamQuestion` EQ ON EQ.QuestionID = Q.QuestionID
+GROUP BY Q.QuestionID)
+
+SELECT * FROM CTE_SLSD
+WHERE SL = (SELECT MAX(SL) FROM CTE_SLSD);
+
+
+#câu 6: Thông kê mỗi category Question được sử dụng trong bao nhiêu Question
+SELECT Q.Content, CQ.CategoryName, COUNT(Q.CategoryID) AS SLSD
+FROM `Question` Q
+JOIN `CategoryQuestion` CQ ON Q.CategoryID = CQ.CategoryID
+GROUP BY Q.CategoryID;
+
+
+#câu 7:Thông kê mỗi Question được sử dụng trong bao nhiêu Exam
+SELECT Q.Content, Q.QuestionID, EQ.ExamID, COUNT(EQ.QuestionID) AS SL
+FROM `Question` Q
+LEFT JOIN `ExamQuestion` EQ ON EQ.QuestionID = Q.QuestionID
 GROUP BY Q.QuestionID;
 
-#Câu 8
-WITH CountQuesQTable AS(
-	SELECT Q.content, Q.QuestionID, COUNT(A.QuestionID) AS SLQ
-    FROM Answer A
-    JOIN Question Q ON Q.QuestionID = A.QuestionID
-    GROUP BY A.QuestionID)
-SELECT * FROM CountQuesQTable
-WHERE SLQ = (SELECT MAX(SLQ) FROM CountQuesQTable);
+#câu 8: Lấy ra Question có nhiều câu trả lời nhất
+WITH CTE_SLSDQ AS
+(SELECT Q.Content, COUNT(AR.QuestionID) AS SLA
+FROM `Question` Q
+LEFT JOIN `Answer` AR ON Q.QuestionID = AR.QuestionID
+GROUP BY Q.QuestionID)
 
-#Câu 9
-SELECT G.GroupID, G.GroupName, COUNT(GA.GroupID) AS SLA
-FROM GroupAccount GA
-JOIN `Group` G ON G.GroupID = GA.GroupID
-GROUP BY GA.GroupID;
+SELECT * FROM CTE_SLSDQ
+WHERE SLA = (SELECT MAX(SLA) FROM CTE_SLSDQ);
 
-#Câu 10
-WITH CountQuesPTable AS(
-SELECT P.PositionID, P.PositionName, COUNT(A.PositionID) SLP
-FROM `Account` A
-JOIN `Position` P ON P.PositionID = A.PositionID
-GROUP BY A.PositionID)
-SELECT * FROM CountQuesPTable 
-WHERE SLP = (SELECT Min(SLP) FROM CountQuesPTable); 
+#câu 9: Thống kê số lượng account trong mỗi group
+SELECT G.GroupName, COUNT(GA.AccountID) AS SLA
+FROM `Group` G
+LEFT JOIN `GroupAccount` GA ON Ga.GroupID = G.GroupID
+GROUP BY G.GroupID;
 
-#Câu 11
-SELECT D.DepartmentName, P.PositionID, P.PositionName, A.DepartmentID, COUNT(A.PositionID) SLP
-FROM `Account` A
-JOIN `Position` P ON P.PositionID = A.PositionID
+#câu 10: Tìm chức vụ có ít người nhất
+WITH CTE_SLNg AS
+(SELECT P.PositionName, COUNT(A.PositionID) AS SLNg
+FROM `Position` P
+JOIN `Account` A ON A.PositionID = P.PositionID
+GROUP BY P.PositionID)
+
+SELECT * FROM CTE_SLNg
+WHERE SLNg = (SELECT MIN(SLNg) FROM CTE_SLNg) ;
+
+#câu 11: Thống kê mỗi phòng ban có bao nhiêu dev, test, scrum master, PM
+SELECT P.PositionName, D.DepartmentName, COUNT(A.PositionID) AS SL
+FROM `Position` P
+JOIN `Account` A ON A.PositionID = P.PositionID
 JOIN `Department` D ON D.DepartmentID = A.DepartmentID
-GROUP BY A.PositionID;
+GROUP BY (A.PositionID);
 
-#Câu 12
-SELECT T.TypeName, A.FullName, AN.Content, Q.QuestionID
-FROM Question Q
-JOIN TypeQuestion T ON T.TypeID = Q.TypeID
+#câu 12: Lấy thông tin chi tiết của câu hỏi bao gồm: thông tin cơ bản của question, loại câu hỏi, ai là người tạo ra câu hỏi, câu trả lời là gì, ...
+SELECT Q.Content, Tq.TypeName, A.FullName, AR.Content
+FROM `Question` Q
+JOIN `TypeQuestion` TQ ON TQ.TypeID = Q.TypeID
 JOIN `Account` A ON A.AccountID = Q.CreatorID
-JOIN Answer AN ON AN.QuestionID = Q.QuestionID
-GROUP BY Q.QuestionID;
+LEFT JOIN `Answer` AR ON AR.QuestionID = Q.QuestionID;
+
+#Câu 13: Lấy ra số lượng câu hỏi của mỗi loại tự luận hay trắc nghiệm
+SELECT TQ.TypeName, COUNT(Q.TypeID) AS SL
+FROM `TypeQuestion` TQ
+JOIN `Question` Q ON Q.TypeID = TQ.TypeID
+GROUP BY TQ.TypeName;
+
+#Câu 14: Lấy ra group không có account nào
+WITH CTE_SLAc AS
+(SELECT G.GroupName, COUNT(GA.GroupID) AS SLA
+FROM `Group` G
+LEFT JOIN `GroupAccount` GA ON Ga.GroupID = G.GroupID
+GROUP BY G.GroupID)
+
+SELECT * FROM CTE_SLAc
+WHERE SLA = (SELECT MIN(SLA) FROM CTE_SLac);
+
+#câu 16: Lấy ra question không có answer nào
+WITH CTE_SLAr AS
+(SELECT Q.Content, COUNT(AR.QuestionID) AS SL_Answer
+FROM `Question` Q
+LEFT JOIN `Answer` AR ON Q.QuestionID = AR.QuestionID
+GROUP BY Q.QuestionID)
+
+SELECT * FROM CTE_SLAr
+WHERE SL_Answer = (SELECT MIN(SL_Answer) FROM CTE_SLAr);
 
 
-#Câu 13
-SELECT T.TypeName, COUNT(Q.TypeID) AS SLCH
-FROM TypeQuestion T
-JOIN Question Q ON T.TypeID = Q.TypeID
-GROUP BY Q.TypeID;
-
-#Câu 14
-SELECT * FROM `Group` G
-LEFT JOIN `GroupAccount` GA ON G.groupID = GA.GroupID
-WHERE GA.AccountID IS NULL;
 
 
+#Câu 17:
 
-#Câu 17
 SELECT A.FullName
 FROM `Account` A
-JOIN `GroupAccount` GA ON A.AccountID = GA.AccountID
-WHERE GA.GroupID = 1
+JOIN `GroupAccount` GA ON GA.AccountID = A.AccountID
+WHERE GroupID = 1
+
 UNION
+
 SELECT A.FullName
 FROM `Account` A
-JOIN `GroupAccount` GA ON A.AccountID = GA.AccountID
-WHERE GA.GroupID = 3;
+JOIN `GroupAccount` GA ON GA.AccountID = A.AccountID
+WHERE GroupID = 2;
+
+
+#Câu 18:
+SELECT G.GroupName, COUNT(GA.AccountID) AS SLA
+FROM `Group` G
+JOIN `GroupAccount` GA ON Ga.GroupID = G.GroupID
+GROUP BY G.GroupID
+HAVING SLA > 1
+UNION ALL
+SELECT G.GroupName, COUNT(GA.AccountID) AS SLA
+FROM `Group` G
+JOIN `GroupAccount` GA ON Ga.GroupID = G.GroupID
+GROUP BY G.GroupID
+HAVING SLA < 5;
 
 
 
