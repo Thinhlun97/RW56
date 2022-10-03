@@ -7,18 +7,17 @@ DELIMITER $$
 CREATE PROCEDURE Proc_get_account_in_departmentName(
 IN in_departmentName VARCHAR(30))
 	BEGIN
-    SELECT 
+		SELECT 
     *
-FROM
+		FROM
     `Account` A
-WHERE
-    EXISTS( SELECT 
-            1
-			FROM
-				Department D
-			WHERE
-				A.DepartmentID = D.DepartmentID
-			AND D.DepartmentName = in_departmentName);
+		WHERE EXISTS( SELECT 
+						1
+						FROM
+							Department D
+						WHERE
+							A.DepartmentID = D.DepartmentID
+						AND D.DepartmentName = in_departmentName);
 	END$$
 DELIMITER ;
 
@@ -108,19 +107,29 @@ DELIMITER ;
 -- positionID: sẽ có default là developer
 -- departmentID: sẽ được cho vào 1 phòng chờ
 -- Sau đó in ra kết quả tạo thành công
+DELIMITER $$
+CREATE PROCEDURE Proc_create_account(
+	IN in_FullName VARCHAR(50),
+    IN in_Email VARCHAR(50))
+BEGIN
+	DECLARE V_UserName VARCHAR(50) DEFAULT SUBSTRING_INDEX(IN_Email, '@', 1);
+    DECLARE V_PositionID INT DEFAULT 1;
+    DECLARE V_DepartmentID INT DEFAULT 12;
+    
+    INSERT INTO `Account` (Email, Username, FullName, DepartmentID, PositionID)
+		VALUE (in_Email , V_UserName, in_FullName, V_DepartmentID ,V_PositionID);
+    
+    
+END$$
+DELIMITER ;
+
+
 
 
 #cau 8: Viết 1 store cho phép người dùng nhập vào Essay hoặc Multiple-Choice
 -- để thống kê câu hỏi essay hoặc multiple-choice nào có content dài nhất
 -- dau vao IN_TQ.TypeName
 -- dau ra OUT_LENGTH(Q.content)
-SELECT Q.*, LENGTH(Q.Content) AS Do_dai1
-FROM `Question` Q 
-JOIN `TypeQuestion` TQ ON TQ.TypeID = Q.TypeID
-WHERE LENGTH(Q.Content) = (SELECT MAX(c)
-FROM (Select LENGTH(Q.Content) AS c FROM `Question` Q) Test);
-
--- muon ra them do dai cua content
 DELIMITER $$
 CREATE PROCEDURE Proc_Cau8(IN IN_TypeName ENUM('Essay','Multiple-Choice'))
 BEGIN
@@ -132,6 +141,8 @@ WHERE LENGTH(Q.content) = (SELECT MAX(Do_dai) FROM CTE_dodaicontent)
 HAVING TQ.TypeName = IN_TypeName;
 END$$
 DELIMITER ;
+
+
 
 #Cau 9: Viết 1 store cho phép người dùng xóa exam dựa vào ID
 
