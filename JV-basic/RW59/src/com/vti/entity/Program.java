@@ -200,11 +200,11 @@ public class Program {
 
 //        IF
 //        Question1
-//        if(account2.department == null){
-//            System.out.printf("Nhân viên này chưa có phòng ban");
-//        }else {
-//            System.out.printf("Nhân viên này thuộc phòng ban " +  account2.department.departmentname);
-//        }
+        if(account2.department == null){
+            System.out.printf("Nhân viên này chưa có phòng ban");
+        }else {
+            System.out.printf("Nhân viên này thuộc phòng ban " +  account2.department.departmentname);
+        }
 
 //        //Question2
 //        if(account2.groups.length == 1 || account2.groups.length == 2){
