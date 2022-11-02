@@ -1,15 +1,16 @@
-package com.vti.entity;
+package com.vti.backend;
 
+import com.vti.entity.Account;
+import com.vti.entity.Department;
+import com.vti.entity.Group;
 import com.vti.entity.*;
 import com.vti.entity.enumtype.PositionName;
 import com.vti.entity.enumtype.TypeName;
 
-
-
 import java.time.LocalDate;
 
-public class Program {
-    public static void main(String[] args){
+public class test2 {
+    public static void main(String[] args) {
 
         //Department
         Department department1 = new Department();
@@ -197,13 +198,12 @@ public class Program {
         exam3.createDate = LocalDate.parse("2020-01-01");
 
 
-
-//        IF
+        //        IF
 //        Question1
-//        if(account2.department == null){
+//        if (account2.department == null) {
 //            System.out.printf("Nhân viên này chưa có phòng ban");
-//        }else {
-//            System.out.printf("Nhân viên này thuộc phòng ban " +  account2.department.departmentname);
+//        } else {
+//            System.out.printf("Nhân viên này thuộc phòng ban " + account2.department.departmentname);
 //        }
 
 //        //Question2
@@ -248,6 +248,19 @@ public class Program {
 //        }
 
 
+        //Question 6
+//        switch (account2.groups.length){
+//            case 1:
+//            case 2:
+//                System.out.println("Group của nhân viên này là Java Fresher, C# Fresher");
+//                break;
+//            case 3:
+//                System.out.println("Nhân viên này là người quan trọng, tham gia nhiều group");
+//                break;
+//            default:
+//                System.out.println(" Nhân viên này là người hóng chuyện, tham gia tất cả các group");
+//        }
+
 //        //Question7
 //        switch (account1.position.positionName){
 //            case DEV:
@@ -261,5 +274,7 @@ public class Program {
 //        //Question8
 //        for( Account ac : args) {
 //            System.out.println(ac.email + " " + ac.fullname + " " + ac.department.departmentname);
-        }
+
+    }
 }
+

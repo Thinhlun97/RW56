@@ -1,6 +1,9 @@
-package com.vti.entity;
+package com.vti.backend;
 
 import com.vti.entity.*;
+import com.vti.entity.Account;
+import com.vti.entity.Department;
+import com.vti.entity.Group;
 import com.vti.entity.enumtype.PositionName;
 import com.vti.entity.enumtype.TypeName;
 
@@ -8,19 +11,19 @@ import com.vti.entity.enumtype.TypeName;
 
 import java.time.LocalDate;
 
-public class Program {
-    public static void main(String[] args){
+public class test1 {
+    public static void main(String[] args) {
 
         //Department
-        Department department1 = new Department();
+        com.vti.entity.Department department1 = new com.vti.entity.Department();
         department1.departmentId = 1;
         department1.departmentname = "Sale";
 
-        Department department2 = new Department();
+        com.vti.entity.Department department2 = new com.vti.entity.Department();
         department2.departmentId = 2;
         department2.departmentname = "Ban Hang";
 
-        Department department3 = new Department();
+        com.vti.entity.Department department3 = new Department();
         department3.departmentId = 3;
         department3.departmentname = "Bao Ve";
 
@@ -43,7 +46,7 @@ public class Program {
 
 
         //Account
-        Account account1 = new Account();
+        com.vti.entity.Account account1 = new com.vti.entity.Account();
         account1.accountId = 1;
         account1.email = "acc1@gmail.com";
         account1.username = "nguyen";
@@ -52,7 +55,7 @@ public class Program {
         account1.position = position1;
         account1.createDate = LocalDate.parse("2019-04-05");
 
-        Account account2 = new Account();
+        com.vti.entity.Account account2 = new com.vti.entity.Account();
         account2.accountId = 2;
         account2.email = "acc2@gmail.com";
         account2.username = "nguyen";
@@ -61,7 +64,7 @@ public class Program {
         account2.position = position2;
         account2.createDate = LocalDate.parse("2019-05-05");
 
-        Account account3 = new Account();
+        com.vti.entity.Account account3 = new com.vti.entity.Account();
         account3.accountId = 3;
         account3.email = "acc3@gmail.com";
         account3.username = "nguyen";
@@ -71,7 +74,7 @@ public class Program {
         account3.createDate = LocalDate.parse("2019-06-05");
 
         //Group
-        Group group1 = new Group();
+        com.vti.entity.Group group1 = new com.vti.entity.Group();
         group1.groupId = 1;
         group1.groupName = "bóng đá";
         group1.creator = account1;
@@ -197,69 +200,5 @@ public class Program {
         exam3.createDate = LocalDate.parse("2020-01-01");
 
 
-
-//        IF
-//        Question1
-//        if(account2.department == null){
-//            System.out.printf("Nhân viên này chưa có phòng ban");
-//        }else {
-//            System.out.printf("Nhân viên này thuộc phòng ban " +  account2.department.departmentname);
-//        }
-
-//        //Question2
-//        if(account2.groups.length == 1 || account2.groups.length == 2){
-//            System.out.println("Group của nhân viên Java");
-//        }else if (account2.groups.length == 3){
-//            System.out.println("Nhân viên này là người" + "quan trọng, tham gia nhiều group");
-//        }else if (account2.groups.length == 4 ){
-//            System.out.println("Nhân viên này là người hóng chuyện, tham gia tất cả các group");
-//        }else if (account2.groups == null){
-//            System.out.println("Nhân viên này chưa có group");
-//        }
-
-//        //Question3
-//        System.out.println(account2.department == null ? "Nhân viên này chưa có phòng ban"
-//                : "Phòng ban của nhân viên này là " + account2.department.departmentname);
-
-//        //Question4
-//        System.out.println(account1.position == position1 ? "Đây là Developer"
-//                : "Người này không phải là Developer");
-
-
-////        //Switch Case
-//            //Question5
-//        Account[] nhom1 = new Account[2];
-//        nhom1[0] = account1;
-//        nhom1[1] = account2;
-////        nhom1[2] = account3;
-//
-//        switch (nhom1.length){
-//            case 1:
-//                System.out.println(" nhóm có 1 thành viên");
-//                break;
-//            case 2:
-//                System.out.println(" nhóm có 2 thành viên");
-//                break;
-//            case 3:
-//                System.out.println(" nhóm có 3 thành viên");
-//                break;
-//            default:
-//                System.out.println(" nhóm có nhiều thành viên ");
-//        }
-
-
-//        //Question7
-//        switch (account1.position.positionName){
-//            case DEV:
-//                System.out.println(" Đây là Developer ");
-//                break;
-//            default:
-//                System.out.println(" Người này không phải Developer");
-//
-//        }
-
-//        //Question8
-//        for( Account ac : args) {
-//            System.out.println(ac.email + " " + ac.fullname + " " + ac.department.departmentname);
-        }
+    }
 }

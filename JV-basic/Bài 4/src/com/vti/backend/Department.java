@@ -1,4 +1,4 @@
-package com.vti.backend.Test2;
+package com.vti.backend;
 
 public class Department {
     public int id;
