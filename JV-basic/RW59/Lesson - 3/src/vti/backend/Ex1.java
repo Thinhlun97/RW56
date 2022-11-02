@@ -1,13 +1,15 @@
 package vti.backend;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ex1 {
     public static void main(String[] args) {
-        Ex1 ex3 = new Ex1();
-//        ex3.ques1();
-//        ex3.ques2();
-        ex3.ques3();
+        Ex1 ex1 = new Ex1();
+//        ex1.ques1();
+//        ex1.ques2();
+//        ex1.ques3();
+        ex1.ques4();
     }
 
     public void ques1(){
@@ -21,7 +23,7 @@ public class Ex1 {
         System.out.println(" làm tròn lương 2 là: " + tronluong_2 );
     }
 
-    public void ques2(){
+    public int ques2(){
         Random random = new Random();
 
         int x = random.nextInt(99999);
@@ -46,26 +48,34 @@ public class Ex1 {
             y = "0"+y;
         }
         System.out.println(y);
+        return x;
     }
 
     public void ques3(){
-        Random random = new Random();
+        //cách 1
+        int random_x = ques2();
 
-        int x = random.nextInt(99999);
-        System.out.println("số ngẫu nhiên x là:" + x);
-        String y = String.valueOf(x);
-        int lengthofString = y.length();
+        String y = String.valueOf(random_x);
+        String kq = y.substring(y.length() - 2);
+        System.out.println(kq);
 
-        for (int i = 0; i < 5-lengthofString; i++){
-            y = "0"+y;
-        }
-        System.out.println(y.charAt(3));
-        System.out.println(y.charAt(4));
+        //cách 2
+        int c2 = random_x % 100;
+        System.out.println(c2);
 
     }
 
     public void ques4(){
+        Scanner q4 = new Scanner(System.in);
+        System.out.print("Hãy nhập vào số a: ");
+        int a = q4.nextInt();
+        System.out.print("Hãy nhập vào số b: ");
+        int b = q4.nextInt();
 
+        int c = a/b;
+        System.out.println("Kết quả là : " + c);
+
+        q4.close();
     }
 
 }
