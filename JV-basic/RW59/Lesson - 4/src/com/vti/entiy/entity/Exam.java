@@ -1,4 +1,4 @@
-package vti.entity;
+package com.vti.entiy.entity;
 
 import java.time.LocalDate;
 

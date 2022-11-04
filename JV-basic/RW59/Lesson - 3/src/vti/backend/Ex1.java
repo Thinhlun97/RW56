@@ -75,7 +75,6 @@ public class Ex1 {
         int c = a/b;
         System.out.println("Kết quả là : " + c);
 
-        q4.close();
     }
 
 }

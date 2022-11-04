@@ -1,8 +1,10 @@
-package vti.entity;
+package com.vti.entiy.entity;
 
 
-import vti.entity.enumtype.PositionName;
-import vti.entity.enumtype.TypeName;
+
+
+import com.vti.entiy.entity.enumtype.PositionName;
+import com.vti.entiy.entity.enumtype.TypeName;
 
 import java.time.LocalDate;
 
