@@ -1,6 +1,6 @@
 package com.vti.frontend;
 
-import com.vti.backend.Student;
+import com.vti.backend.Ex4.Student;
 
 public class demo {
     public static void main(String[] args) {

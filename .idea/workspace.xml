@@ -1,7 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="19595125-c86c-436b-be58-56dfd5765739" name="Default Changelist" comment="" />
+    <list default="true" id="19595125-c86c-436b-be58-56dfd5765739" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/JDBC/JDBC.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/JDBC/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/JDBC/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/JDBC/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q3/HighSchoolStudent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q3/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q3/Q3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q3/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex6_Q1/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex6_Q1/Phone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex6_Q1/VietnamPhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/Lesson - 5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q1/INews.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q1/MyNews.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q1/News.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q2/ITuyenSinh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q2/KhoiThi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q2/SinhVien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 5/src/com/vti/backend/Ex1/Q2/TuyenSinh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 6/Lesson - 6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 6/src/com/vti/entity/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 6/src/com/vti/entity/ScannerUtills.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/Lesson - 7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/file/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/src/vti/frontend/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/src/vti/utils/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/TestingSystem_Assignment_7/TestingSystem_Assignment_7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/TestingSystem_Assignment_7/src/backend/Ex1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JV-basic/RW59/TestingSystem_Assignment_7/src/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/Bao.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/Bao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/QLTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/QLTV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/QuanLySach.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/QuanLySach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/Sach.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/Sach.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/TapChi.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex5_Q4/TapChi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/backend/Ex4/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/frontend/demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 4/src/com/vti/frontend/demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q1_2/QLCB.class" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q1_2/QLCB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/Bao.class" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/Bao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/QLTL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/QuanLySach.class" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/QuanLySach.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/Sach.class" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/Sach.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/TapChi.class" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Ex5_Q4/TapChi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/backend/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/frontend/demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/out/production/Lesson - 4/com/vti/frontend/demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/Program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/test1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/test2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/backend/test3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Answer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/CategoryQuestion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Exam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/Question.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/TypeQuestion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/enumtype/PositionName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/out/production/RW59/com/vti/entity/enumtype/TypeName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/test/src/fordemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/src/test/src/fordemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/test/src/ifelsedemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/src/test/src/ifelsedemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/test/src/switchcase.java" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/src/test/src/switchcase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JV-basic/RW59/test/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JV-basic/RW59/Lesson - 7/src/test/test.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +101,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -49,10 +131,22 @@
       <updated>1667220568152</updated>
       <workItem from="1667220569825" duration="704000" />
       <workItem from="1667369273166" duration="118000" />
+      <workItem from="1668494944192" duration="161000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

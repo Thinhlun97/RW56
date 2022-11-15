@@ -1,23 +1,13 @@
 package com.vti.backend.Ex5_Q4;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class TapChi extends QLTL{
-    private int maTaiLieu;
-    private String tenNXB;
-    private String soBPH;
+public class TapChi extends QLTV {
     private int soPH;
-    private int thangPH;
+    private final LocalDate thangPH;
 
-    public TapChi(int maTaiLieu, String tenNXB, String soBPH) {
+    public TapChi(int maTaiLieu, String tenNXB, int soBPH, int soPH, LocalDate thangPH) {
         super(maTaiLieu, tenNXB, soBPH);
-    }
-
-    public TapChi(int maTaiLieu, String tenNXB, String soBPH, int soPH, int thangPH) {
-        super(maTaiLieu, tenNXB, soBPH);
-        this.maTaiLieu = maTaiLieu;
-        this.tenNXB = tenNXB;
-        this.soBPH = soBPH;
         this.soPH = soPH;
         this.thangPH = thangPH;
     }
@@ -25,11 +15,8 @@ public class TapChi extends QLTL{
     @Override
     public String toString() {
         return "TapChi{" +
-                "maTaiLieu=" + maTaiLieu +
-                ", tenNXB='" + tenNXB + '\'' +
-                ", soBPH='" + soBPH + '\'' +
-                ", soPH=" + soPH +
+                "soPH=" + soPH +
                 ", thangPH=" + thangPH +
-                '}';
+                "} " + super.toString();
     }
 }
