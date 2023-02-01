@@ -31,4 +31,32 @@ public class ScannerUtils {
             }
         }
     }
+
+    public static String inputEmail() {
+        while (true) {
+            String string = scanner.nextLine().trim();
+            if (string.isEmpty()) {
+                System.err.println("Nhập lại: ");
+                continue;
+            }  else if (!string.endsWith("@vti.com.vn")){
+                System.err.println("Nhập lại: ");
+                continue;
+            } else {
+                return string;
+            }
+        }
+    }
+
+    public static String inputPasswords() {
+        while (true) {
+            String string = scanner.nextLine().trim();
+            if (string.isEmpty()) {
+                System.err.println("Sai định dạng, Nhập lại: ");
+            }  else if (string.length() < 6 || string.length() >12){
+                System.err.println("Nhập lại: ");
+            } else {
+                return string;
+            }
+        }
+    }
 }

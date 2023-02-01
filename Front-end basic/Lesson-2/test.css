@@ -1,0 +1,30 @@
+h4{
+    color: blue;
+}
+
+.demo-1{
+    color: blueviolet;
+}
+
+#demo-2{
+    color: yellow;
+}
+
+div p{
+    border: 1px solid red;
+}
+
+p{
+    border: 1px solid black;
+}
+
+.test-margin{
+    margin-top: 70px;
+    margin: 20px 70px 5px 70px;
+    border: 1px solid black
+}
+
+.test-padding{
+    padding: 40px;
+    border: 1px solid black
+}
